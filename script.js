@@ -1,4 +1,3 @@
-// SCROLL TO TOP
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
@@ -12,28 +11,24 @@ scrollBtn.addEventListener("click", () => {
   });
 });
 
-// THEME DIMMER (COLOR-BASED)
 const slider = document.getElementById("themeSlider");
 
 slider.addEventListener("input", () => {
   const value = slider.value; // 0 → 100
   const ratio = value / 100;
 
-  /* BACKGROUND: dark → white */
   const bg = Math.floor(22 + ratio * (255 - 22));
   document.documentElement.style.setProperty(
     "--bg",
     `rgb(${bg}, ${bg}, ${bg})`
   );
 
-  /* TEXT: white → black */
   const text = Math.floor(235 - ratio * 235);
   document.documentElement.style.setProperty(
     "--text",
     `rgb(${text}, ${text}, ${text})`
   );
 
-  /* NAVBAR RED: deep wine → soft muted red */
   const red = Math.floor(179 + ratio * (255 - 179));
   const green = 0;
   const blue = 0;
@@ -44,7 +39,6 @@ slider.addEventListener("input", () => {
   );
 });
 
-// STAR TOGGLER
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -53,7 +47,6 @@ menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("open");
 });
 
-// CLOSE MENU WHEN LINK CLICKED (MOBILE)
 const navLinks = document.querySelectorAll(".nav-links a");
 
 navLinks.forEach(link => {
@@ -63,7 +56,6 @@ navLinks.forEach(link => {
   });
 });
 
-// OPTIONAL: click outside to close menu
 window.addEventListener("click", (e) => {
   if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
     navMenu.classList.remove("open");
@@ -84,12 +76,10 @@ lightbox.onclick = () => {
   lightbox.style.display = "none";
 };
 
-// Simple lightbox for project images
 const projectsLightbox = document.getElementById("projects-lightbox");
 const projectsLightboxImg = document.getElementById("projects-lightbox-img");
 
 if (projectsLightbox && projectsLightboxImg) {
-  // Open lightbox on image click
   document.querySelectorAll(".card img").forEach(img => {
     img.addEventListener("click", e => {
       projectsLightbox.style.display = "flex";
@@ -97,9 +87,8 @@ if (projectsLightbox && projectsLightboxImg) {
     });
   });
 
-  // Close lightbox when clicking anywhere
   projectsLightbox.addEventListener("click", () => {
     projectsLightbox.style.display = "none";
-    projectsLightboxImg.src = ""; // optional: reset
+    projectsLightboxImg.src = "";
   });
 }

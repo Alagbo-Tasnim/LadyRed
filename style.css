@@ -75,7 +75,6 @@ body {
   text-decoration: none;
 }
 
-/* Toggle button */
 .star-toggle {
   position: fixed;
   top: 8px;
@@ -85,7 +84,6 @@ body {
   z-index: 1001;
 
   display: none;
-  /* hidden by default */
 
   transition: transform 0.4s ease, color 0.3s ease;
 }
@@ -353,7 +351,6 @@ body {
   width: 100%;
 }
 
-/* optional: make it bigger on mobile but still fit nicely */
 @media (max-width: 768px) {
   .projects-page .lightbox img {
     max-width: 95%;
@@ -364,9 +361,7 @@ body {
 .projects-page .lightbox-content {
   display: flex;
   flex-direction: column;
-  /* stack image and text vertically */
   align-items: center;
-  /* center horizontally */
   max-width: 90%;
   max-height: 90%;
   text-align: left;
