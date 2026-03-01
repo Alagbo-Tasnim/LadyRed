@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lady Red | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">Lady Red</div>
+
+    <div class="star-toggle" id="menuToggle">✦</div>
+    <input type="range" min="0" max="100" value="50" id="themeSlider">
+
+    <nav class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="resume.pdf" download>Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="hero-intro">
+        <img src="img/pfp.jpg" alt="Lady Red" class="hero-img">
+
+        <div class="hero-text">
+          <h1>Hello, I’m <span class="slide-name">Lady Red</span>.</h1>
+          <p>I transform concepts into colourful realities.</p>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#mycv" class="btn primary">Resume</a>
+        <a href="#about" class="btn outline">About Me</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h1 class="heading">About<span style="color: #d40000;">.</span></h1>
+  </section>
+
+  <section class="section" id="projects">
+    <h1 class="heading">Projects<span style="color: #d40000;">.</span></h1>
+    <div class="masonry">
+      <div class="item">
+        <img src="img/23.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/7.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/24.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/25.jpg" alt="Artwork">
+      </div>
+      <div class="item">
+        <img src="img/11.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/29.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/3.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/30.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/21.jpg" alt="Artwork">
+      </div>
+
+      <div class="item">
+        <img src="img/4.jpg" alt="Artwork">
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox">
+      <img src="" id="lightbox-img">
+    </div>
+
+    <a href="projects.html">
+      <h1>Explore more of my work...</h1>
+    </a>
+  </section>
+
+  <section class="section" id="contact">
+    <h1 class="heading">Contact<span style="color: #d40000;">.</span></h1>
+  </section>
+
+  <button id="scrollTopBtn" class="scroll-tab">↑</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
