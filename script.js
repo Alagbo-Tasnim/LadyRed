@@ -62,33 +62,66 @@ window.addEventListener("click", (e) => {
     menuToggle.classList.remove("active");
   }
 });
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+const homeLightbox = document.getElementById("lightbox");
+const homeLightboxImg = document.getElementById("lightbox-img");
 
 document.querySelectorAll(".item img").forEach(img => {
   img.onclick = () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
+    homeLightbox.style.display = "flex";
+    homeLightboxImg.src = img.src;
   };
 });
 
-lightbox.onclick = () => {
-  lightbox.style.display = "none";
+homeLightbox.onclick = () => {
+  homeLightbox.style.display = "none";
 };
 
-const projectsLightbox = document.getElementById("projects-lightbox");
-const projectsLightboxImg = document.getElementById("projects-lightbox-img");
+const expandBtns = document.querySelectorAll(".expand-btn");
 
-if (projectsLightbox && projectsLightboxImg) {
-  document.querySelectorAll(".card img").forEach(img => {
-    img.addEventListener("click", e => {
-      projectsLightbox.style.display = "flex";
-      projectsLightboxImg.src = e.target.src;
+const projectLightbox = document.getElementById("projects-lightbox");
+const projectImg = document.getElementById("projects-lightbox-img");
+const projectTitle = document.getElementById("lightbox-title");
+const projectMeta = document.getElementById("lightbox-meta");
+const projectDesc = document.getElementById("lightbox-desc");
+
+const closeBtn = document.querySelector(".close-lightbox");
+
+if (expandBtns.length > 0 && projectLightbox) {
+
+  expandBtns.forEach(btn => {
+
+    btn.addEventListener("click", e => {
+
+      const card = e.target.closest(".card");
+
+      const img = card.querySelector("img").src;
+      const title = card.querySelector("h3").textContent;
+      const meta = card.querySelector(".meta").textContent;
+      const desc = card.querySelector("p").textContent;
+
+      projectImg.src = img;
+      projectTitle.textContent = title;
+      projectMeta.textContent = meta;
+      projectDesc.textContent = desc;
+
+      projectLightbox.classList.add("active");
+
     });
+
   });
 
-  projectsLightbox.addEventListener("click", () => {
-    projectsLightbox.style.display = "none";
-    projectsLightboxImg.src = "";
-  });
+}
+
+if (closeBtn) {
+  closeBtn.onclick = () => {
+    projectLightbox.classList.remove("active");
+  };
+}
+
+if (projectLightbox) {
+  projectLightbox.onclick = (e) => {
+    if (e.target === projectLightbox) {
+      projectLightbox.classList.remove("active");
+    }
+  };
 }
