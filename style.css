@@ -864,3 +864,31 @@ opacity:1;
     transform:scale(1.2);
 }
 
+@media (max-width: 992px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-info, .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 20px 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .contact-info h2 {
+    font-size: 20px;
+  }
+}
+
