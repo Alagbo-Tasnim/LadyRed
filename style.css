@@ -204,6 +204,10 @@ body {
   font-size: 44px; 
   font-weight: 800;
   color: var(--nav);
+
+  white-space: nowrap;    
+  overflow: hidden;       
+  text-overflow: ellipsis;
 }
 
 .hero h3 {
