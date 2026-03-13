@@ -43,7 +43,7 @@
 
       <div class="hero-buttons">
         <a href="#mycv" class="btn primary">Resume</a>
-        <a href="projects.html" class="btn outline">Projects</a>
+        <a href="#projects" class="btn outline">Projects</a>
       </div>
 
     </div>
@@ -138,13 +138,115 @@
       <img src="" id="lightbox-img">
     </div>
 
-    <a href="projects.html">
-      <h1>Explore more of my work...</h1>
-    </a>
+<section id="explore-projects" style="text-align:center; padding:60px 20px; background:var(--bg);">
+  
+  <p style="color: var(--text); font-size:1.3rem; margin-bottom:30px;">
+    Can’t get enough? Check out the full collection of my digital artwork.
+  </p>
+
+  <div class="preview-thumbs" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;"></div>
+
+  <a href="projects.html" class="cta-button">
+    See All Projects <span class="arrow">→</span>
+  </a>
+</section>
+
+<style>
+.thumb-link {
+  display:block;
+  width: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 0 1 33%;
+  max-width: 150px;
+  min-width: 100px;
+}
+
+.thumb-link img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+
+.thumb-link:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(212,0,13,0.5);
+}
+
+.preview-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* prevent stacking */
+  overflow-x: auto;  /* allow horizontal scroll on very small screens */
+  padding-bottom: 5px; /* prevent scrollbar overlap */
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 32px;
+  background: #d4000d;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ff1a1a;
+  transform: scale(1.05);
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.3s;
+}
+
+.cta-button:hover .arrow {
+  transform: translateX(4px);
+}
+</style>
+
+<script>
+// All project thumbnails (images only) – all link to /projects
+const projects = [
+  { src: 'img/1.jpg' },
+  { src: 'img/22.jpg' },
+  { src: 'img/18.jpg' },
+  { src: 'img/15.jpg' },
+  { src: 'img/16.jpg' },
+  { src: 'img/14.jpg' }
+];
+
+// Pick 3 random projects
+function getRandomProjects(arr, n) {
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, n);
+}
+
+// Inject thumbnails linking to Projects page
+const previewContainer = document.querySelector('.preview-thumbs');
+const randomProjects = getRandomProjects(projects, 3);
+
+randomProjects.forEach(project => {
+  const thumbLink = document.createElement('a');
+  thumbLink.href = 'projects.html';
+  thumbLink.className = 'thumb-link';
+  thumbLink.innerHTML = `<img src="${project.src}" alt="Project Thumbnail">`;
+  previewContainer.appendChild(thumbLink);
+});
+</script>
   </section>
 
   <section class="section" id="contact">
-    <h1 class="heading">Contact<span style="color: #d40000;">.</span></h1>
+    <h1 class="heading">Contact<span style="color: var(--accent);">.</span></h1>
      <div class="contact-card">
             <h2>Work with me</h2>
             <p>Available for custom artworks, collaborations and project enquiries.</p>

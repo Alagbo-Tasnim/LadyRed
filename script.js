@@ -65,16 +65,20 @@ window.addEventListener("click", (e) => {
 const homeLightbox = document.getElementById("lightbox");
 const homeLightboxImg = document.getElementById("lightbox-img");
 
-document.querySelectorAll(".item img").forEach(img => {
-  img.onclick = () => {
-    homeLightbox.style.display = "flex";
-    homeLightboxImg.src = img.src;
-  };
-});
+if (homeLightbox && homeLightboxImg) {
 
-homeLightbox.onclick = () => {
-  homeLightbox.style.display = "none";
-};
+  document.querySelectorAll(".item img").forEach(img => {
+    img.onclick = () => {
+      homeLightbox.style.display = "flex";
+      homeLightboxImg.src = img.src;
+    };
+  });
+
+  homeLightbox.onclick = () => {
+    homeLightbox.style.display = "none";
+  };
+
+}
 
 const expandBtns = document.querySelectorAll(".expand-btn");
 
