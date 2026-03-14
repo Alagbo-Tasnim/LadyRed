@@ -13,32 +13,32 @@ scrollBtn.addEventListener("click", () => {
 
 const slider = document.getElementById("themeSlider");
 
+const savedTheme = localStorage.getItem("themeSliderValue");
+if (savedTheme) {
+  slider.value = savedTheme;
+  applyTheme(savedTheme);
+}
+
 slider.addEventListener("input", () => {
-  const value = slider.value; // 0 → 100
+  const value = slider.value;
+  localStorage.setItem("themeSliderValue", value); // save current value
+  applyTheme(value);
+});
+
+function applyTheme(value) {
   const ratio = value / 100;
 
   const bg = Math.floor(22 + ratio * (255 - 22));
-  document.documentElement.style.setProperty(
-    "--bg",
-    `rgb(${bg}, ${bg}, ${bg})`
-  );
+  document.documentElement.style.setProperty("--bg", `rgb(${bg}, ${bg}, ${bg})`);
 
   const text = Math.floor(235 - ratio * 235);
-  document.documentElement.style.setProperty(
-    "--text",
-    `rgb(${text}, ${text}, ${text})`
-  );
+  document.documentElement.style.setProperty("--text", `rgb(${text}, ${text}, ${text})`);
 
   const red = Math.floor(179 + ratio * (255 - 179));
   const green = 0;
   const blue = 0;
-
-  document.documentElement.style.setProperty(
-    "--nav",
-    `rgb(${red}, ${green}, ${blue})`
-  );
-});
-
+  document.documentElement.style.setProperty("--nav", `rgb(${red}, ${green}, ${blue})`);
+}
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -129,3 +129,70 @@ if (projectLightbox) {
     }
   };
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".section").forEach((sec, i) => {
+    setTimeout(() => sec.classList.add("visible"), i * 150); // stagger sections
+  });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".item, .card").forEach((el, i) => {
+    setTimeout(() => el.classList.add("visible"), i * 100);
+  });
+});
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = 0;
+  setTimeout(() => loader.remove(), 500);
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll(".item, .card, .section").forEach(el => observer.observe(el));
+
+const projects = [{
+    src: 'img/1.jpg'
+  },
+  {
+    src: 'img/22.jpg'
+  },
+  {
+    src: 'img/18.jpg'
+  },
+  {
+    src: 'img/15.jpg'
+  },
+  {
+    src: 'img/16.jpg'
+  },
+  {
+    src: 'img/14.jpg'
+  }
+];
+
+function getRandomProjects(arr, n) {
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, n);
+}
+
+const previewContainer = document.querySelector('.preview-thumbs');
+const randomProjects = getRandomProjects(projects, 3);
+
+randomProjects.forEach(project => {
+  const thumbLink = document.createElement('a');
+  thumbLink.href = 'projects.html';
+  thumbLink.className = 'thumb-link';
+  thumbLink.innerHTML = `<img src="${project.src}" alt="Project Thumbnail">`;
+  previewContainer.appendChild(thumbLink);
+});

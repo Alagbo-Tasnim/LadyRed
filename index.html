@@ -11,6 +11,7 @@
 
 <body>
 
+  <div id="loader"></div>
   <header class="navbar">
     <div class="logo">Lady Red</div>
 
@@ -21,8 +22,8 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="resume.pdf" download>Resume</a></li>
       </ul>
     </nav>
@@ -37,7 +38,8 @@
         <div class="hero-text">
           <h1>Hello, I’m <span class="slide-name">Lady Red</span>.</h1>
           <h3><span>|</span> Digital Artist <span>|</span></h3>
-          <p>Specializing in digital illustrations, visual storytelling, and custom artwork for creators, communities and digital projects.</p>
+          <p>Specializing in digital illustrations, visual storytelling, and custom artwork for creators, communities
+            and digital projects.</p>
         </div>
       </div>
 
@@ -52,46 +54,46 @@
   <section class="section about-section" id="about">
     <h1 class="heading">About<span style="color: #d40000;">.</span></h1>
 
-  <p class="about-intro">
-    I’m Lady Red, a digital artist who creates expressive, atmospheric character
-    illustrations that explore emotion and storytelling through bold colour,
-    dramatic contrast, and cinematic lighting.
-  </p>
+    <p class="about-intro">
+      I’m Lady Red, a digital artist who creates expressive, atmospheric character
+      illustrations that explore emotion and storytelling through bold colour,
+      dramatic contrast, and cinematic lighting.
+    </p>
 
-  <div class="about-stats">
-    <div class="stat-card"><span>2+</span> Years Experience</div>
-    <div class="stat-card"><span>20+</span> Completed Projects</div>
-    <div class="stat-card"><span>50+</span> Artworks Created</div>
-  </div>
+    <div class="about-stats">
+      <div class="stat-card"><span>2+</span> Years Experience</div>
+      <div class="stat-card"><span>20+</span> Completed Projects</div>
+      <div class="stat-card"><span>50+</span> Artworks Created</div>
+    </div>
 
-  <div class="about-details">
-    <ul class="styled-list">
-      <li>Specializes in 2D Artworks and stylized digital illustration</li>
-      <li>Available for commissions and collaborations</li>
-    </ul>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>Skills</h3>
+    <div class="about-details">
       <ul class="styled-list">
-        <li>2D Artworks</li>
-        <li>Stylized Digital Illustration</li>
-        <li>Visual Storytelling</li>
+        <li>Specializes in 2D Artworks and stylized digital illustration</li>
+        <li>Available for commissions and collaborations</li>
       </ul>
     </div>
 
-    <div class="about-card">
-      <h3>Tools</h3>
-      <ul class="styled-list">
-        <li>Krita</li>
-        <li>Adobe Photoshop</li>
-        <li>IbisPaint</li>
-      </ul>
-    </div>
-  </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Skills</h3>
+        <ul class="styled-list">
+          <li>2D Artworks</li>
+          <li>Stylized Digital Illustration</li>
+          <li>Visual Storytelling</li>
+        </ul>
+      </div>
 
-</section>
+      <div class="about-card">
+        <h3>Tools</h3>
+        <ul class="styled-list">
+          <li>Krita</li>
+          <li>Adobe Photoshop</li>
+          <li>IbisPaint</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
   <section class="section" id="projects">
     <h1 class="heading">Projects<span style="color: #d40000;">.</span></h1>
     <div class="masonry">
@@ -138,135 +140,44 @@
       <img src="" id="lightbox-img">
     </div>
 
-<section id="explore-projects" style="text-align:center; padding:60px 20px; background:var(--bg);">
-  
-  <p style="color: var(--text); font-size:1.3rem; margin-bottom:30px;">
-    Can’t get enough? Check out the full collection of my digital artwork.
-  </p>
+    <section id="explore-projects" style="text-align:center; padding:60px 20px; background:var(--bg);">
 
-  <div class="preview-thumbs" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;"></div>
+      <p style="color: var(--text); font-size:1.3rem; margin-bottom:30px;">
+        Can’t get enough? Check out the full collection of my digital artwork.
+      </p>
 
-  <a href="projects.html" class="cta-button">
-    See All Projects <span class="arrow">→</span>
-  </a>
-</section>
+      <div class="preview-thumbs"
+        style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;"></div>
 
-<style>
-.thumb-link {
-  display:block;
-  width: 150px;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  flex: 0 1 33%;
-  max-width: 150px;
-  min-width: 100px;
-}
+      <a href="projects.html" class="cta-button">
+        See All Projects <span class="arrow">→</span>
+      </a>
+    </section>
 
-.thumb-link img {
-  width: 100%;
-  display: block;
-  transition: transform 0.3s;
-}
-
-
-.thumb-link:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(212,0,13,0.5);
-}
-
-.preview-thumbs {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap; /* prevent stacking */
-  overflow-x: auto;  /* allow horizontal scroll on very small screens */
-  padding-bottom: 5px; /* prevent scrollbar overlap */
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 14px 32px;
-  background: #d4000d;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #ff1a1a;
-  transform: scale(1.05);
-}
-
-.arrow {
-  display: inline-block;
-  margin-left: 6px;
-  transition: transform 0.3s;
-}
-
-.cta-button:hover .arrow {
-  transform: translateX(4px);
-}
-</style>
-
-<script>
-// All project thumbnails (images only) – all link to /projects
-const projects = [
-  { src: 'img/1.jpg' },
-  { src: 'img/22.jpg' },
-  { src: 'img/18.jpg' },
-  { src: 'img/15.jpg' },
-  { src: 'img/16.jpg' },
-  { src: 'img/14.jpg' }
-];
-
-// Pick 3 random projects
-function getRandomProjects(arr, n) {
-  const shuffled = arr.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, n);
-}
-
-// Inject thumbnails linking to Projects page
-const previewContainer = document.querySelector('.preview-thumbs');
-const randomProjects = getRandomProjects(projects, 3);
-
-randomProjects.forEach(project => {
-  const thumbLink = document.createElement('a');
-  thumbLink.href = 'projects.html';
-  thumbLink.className = 'thumb-link';
-  thumbLink.innerHTML = `<img src="${project.src}" alt="Project Thumbnail">`;
-  previewContainer.appendChild(thumbLink);
-});
-</script>
   </section>
 
   <section class="section" id="contact">
     <h1 class="heading">Contact<span style="color: var(--accent);">.</span></h1>
-     <div class="contact-card">
-            <h2>Work with me</h2>
-            <p>Available for custom artworks, collaborations and project enquiries.</p>
+    <div class="contact-card">
+      <h2>Work with me</h2>
+      <p>Available for custom artworks, collaborations and project enquiries.</p>
 
-            <form>
-                <input type="email" placeholder="Your Email" required>
+      <form>
+        <input type="email" placeholder="Your Email" required>
 
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
-        
+        <button type="submit">Send Message</button>
+      </form>
 
-        <div class="socials">
-            <a href="https://discord.gg/Lxdy_rxd"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://x.com/Lxdy_rxd"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://t.me/Lxdy_rxd"><i class="fa-brands fa-telegram"></i></a>
-        </div>
 
-        </div>
+      <div class="socials">
+        <a href="https://discord.gg/Lxdy_rxd"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://x.com/Lxdy_rxd"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://t.me/Lxdy_rxd"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+
+    </div>
   </section>
 
   <button id="scrollTopBtn" class="scroll-tab">↑</button>
