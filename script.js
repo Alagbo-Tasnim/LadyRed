@@ -62,23 +62,6 @@ window.addEventListener("click", (e) => {
     menuToggle.classList.remove("active");
   }
 });
-const homeLightbox = document.getElementById("lightbox");
-const homeLightboxImg = document.getElementById("lightbox-img");
-
-if (homeLightbox && homeLightboxImg) {
-
-  document.querySelectorAll(".item img").forEach(img => {
-    img.onclick = () => {
-      homeLightbox.style.display = "flex";
-      homeLightboxImg.src = img.src;
-    };
-  });
-
-  homeLightbox.onclick = () => {
-    homeLightbox.style.display = "none";
-  };
-
-}
 
 const expandBtns = document.querySelectorAll(".expand-btn");
 
@@ -86,7 +69,6 @@ const projectLightbox = document.getElementById("projects-lightbox");
 const projectImg = document.getElementById("projects-lightbox-img");
 const projectTitle = document.getElementById("lightbox-title");
 const projectMeta = document.getElementById("lightbox-meta");
-const projectDesc = document.getElementById("lightbox-desc");
 
 const closeBtn = document.querySelector(".close-lightbox");
 
@@ -101,12 +83,10 @@ if (expandBtns.length > 0 && projectLightbox) {
       const img = card.querySelector("img").src;
       const title = card.querySelector("h3").textContent;
       const meta = card.querySelector(".meta").textContent;
-      const desc = card.querySelector("p").textContent;
 
       projectImg.src = img;
       projectTitle.textContent = title;
       projectMeta.textContent = meta;
-      projectDesc.textContent = desc;
 
       projectLightbox.classList.add("active");
 
@@ -196,3 +176,25 @@ randomProjects.forEach(project => {
   thumbLink.innerHTML = `<img src="${project.src}" alt="Project Thumbnail">`;
   previewContainer.appendChild(thumbLink);
 });
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const email = this.email.value;
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Please enter a valid email!");
+    return;
+  }
+
+  emailjs.sendForm(
+    "service_0fkv1wf",
+    "template_yiylfvb",
+    this
+  )
+  .then(function(response) {
+    console.log("Email sent!", response.status, response.text);
+  }, function(error) {
+    console.error("Failed to send email:", error);
+  });
+});
+

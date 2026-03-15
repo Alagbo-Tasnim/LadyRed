@@ -67,9 +67,10 @@
     </div>
 
     <div class="about-details">
-      <ul class="styled-list">
-        <li>Specializes in 2D Artworks and stylized digital illustration</li>
-        <li>Available for commissions and collaborations</li>
+      <ul style="list-style: none;">
+        <li><i class="fa-solid fa-palette"></i>Specializes in 2D artworks and stylized digital illustration, creating visually striking pieces that capture imagination and style.</li>
+        <li><i class="fa-solid fa-handshake"></i>Open to commissions and creative collaborations, bringing unique ideas to life with personalized digital art for clients, projects, and brands.</li>
+        <li><i class="fa-solid fa-rocket fa-icon"></i> Designs dynamic, eye-catching promotional artworks that bring Web3 projects, NFT launches, and digital campaigns to life, helping brands stand out in the fast-paced crypto and blockchain space.</li>
       </ul>
     </div>
 
@@ -95,66 +96,152 @@
 
   </section>
   <section class="section" id="projects">
-    <h1 class="heading">Projects<span style="color: #d40000;">.</span></h1>
+
+    <h1 class="heading">Projects<span style="color:#d40000;">.</span></h1>
+
     <div class="masonry">
+
       <div class="item">
-        <img src="img/23.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/23.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/7.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/7.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/24.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/24.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/25.jpg" alt="Artwork">
-      </div>
-      <div class="item">
-        <img src="img/11.jpg" alt="Artwork">
-      </div>
-
-      <div class="item">
-        <img src="img/29.jpg" alt="Artwork">
-      </div>
-
-      <div class="item">
-        <img src="img/3.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/25.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/30.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/11.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/21.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/29.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
 
       <div class="item">
-        <img src="img/4.jpg" alt="Artwork">
+        <div class="card">
+          <img src="img/3.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
       </div>
+
+      <div class="item">
+        <div class="card">
+          <img src="img/30.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <img src="img/21.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card">
+          <img src="img/4.jpg" loading="lazy">
+          <button class="expand-btn">⛶</button>
+          <div class="card-info" style="display:none;">
+            <h3></h3>
+            <span class="meta"></span>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="lightbox" id="lightbox">
-      <img src="" id="lightbox-img">
-    </div>
 
-    <section id="explore-projects" style="text-align:center; padding:60px 20px; background:var(--bg);">
 
-      <p style="color: var(--text); font-size:1.3rem; margin-bottom:30px;">
+    <section id="explore-projects" style="text-align:center;padding:60px 20px;background:var(--bg);">
+
+      <p style="color:var(--text);font-size:1.3rem;margin-bottom:30px;">
         Can’t get enough? Check out the full collection of my digital artwork.
       </p>
 
       <div class="preview-thumbs"
-        style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;"></div>
+        style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:30px;"></div>
 
       <a href="projects.html" class="cta-button">
         See All Projects <span class="arrow">→</span>
       </a>
+
     </section>
 
   </section>
+
+  <div class="projects-lightbox" id="projects-lightbox">
+    <div class="lightbox-content">
+      <span class="close-lightbox">✕</span>
+      <img id="projects-lightbox-img">
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <span id="lightbox-meta"></span>
+      </div>
+    </div>
+  </div>
+
 
   <section class="section" id="contact">
     <h1 class="heading">Contact<span style="color: var(--accent);">.</span></h1>
@@ -163,16 +250,15 @@
       <p>Available for custom artworks, collaborations and project enquiries.</p>
 
       <form>
-        <input type="email" placeholder="Your Email" required>
-
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
       </form>
 
 
       <div class="socials">
-        <a href="https://discord.gg/Lxdy_rxd"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://discord.gg/M2aSHAUd"><i class="fa-brands fa-discord"></i></a>
         <a href="https://x.com/Lxdy_rxd"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="https://t.me/Lxdy_rxd"><i class="fa-brands fa-telegram"></i></a>
       </div>
@@ -182,7 +268,18 @@
 
   <button id="scrollTopBtn" class="scroll-tab">↑</button>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("VJStaNQSAvJ_VRcZO");
+    })();
+  </script>
+
   <script src="script.js"></script>
+  <footer>
+    &copy; 2026 Lady Red. All rights reserved.
+  </footer>
 </body>
 
 </html>
