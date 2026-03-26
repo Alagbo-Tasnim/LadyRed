@@ -177,10 +177,14 @@ randomProjects.forEach(project => {
   previewContainer.appendChild(thumbLink);
 });
 
+(function () {
+      emailjs.init("VJStaNQSAvJ_VRcZO");
+    })();
+
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  
-  const email = this.email.value;
+  const form = e.target;
+  const email = form.email.value;
   if (!email.includes("@") || !email.includes(".")) {
     alert("Please enter a valid email!");
     return;
@@ -189,12 +193,15 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
   emailjs.sendForm(
     "service_0fkv1wf",
     "template_yiylfvb",
-    this
+    form
   )
   .then(function(response) {
-    console.log("Email sent!", response.status, response.text);
+    console.log("SUCCESS!", response.status, response.text);
+    alert("Email sent successfully!");
+    form.reset();
   }, function(error) {
-    console.error("Failed to send email:", error);
+    console.error("FAILED...", error);
+    alert("Failed to send email. Try again.");
   });
 });
 
